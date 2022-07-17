@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import classes from "./CompanyList.module.css"
 import {Carousel,Container} from "react-bootstrap";
-import imag from "./1.jpg";
+import imag from "./1.png";
 import {useNavigate, useParams} from "react-router-dom";
 import {useFetching} from "../hooks/useFetching";
 import api from "../services/api";

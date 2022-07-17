@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Vivaldi from '../images/Vivaldi.png'
-import tradingNow from '../images/tradingNow.png'
 import classes from './Slider.module.css'
 import {useNavigate} from "react-router-dom";
 import {Carousel} from "react-bootstrap";
-import imag from "../../component/1.jpg";
-import slid1 from "../images/slid1.png";
-import slid2 from "../images/slid2.png";
-import slid3 from "../images/slid3.png";
+import slid1 from "../images/slid1.jpg";
+import slid2 from "../images/slid2.jpg";
+import slid3 from "../images/slid3.jpg";
 const Slider = () => {
 
    const [pointsAmount, setPointsAmount] = useState('')
@@ -147,15 +145,7 @@ const Slider = () => {
                            />
                   </Carousel.Item>
                </Carousel>
-               {/*<div className={classes.image}>
-                  <img src={tradingNow} alt="trading" className={classes.trading__image} />
-               </div>
-               <div className={classes.text__content}>
-                  <p className={classes.text__under__photo}>Размещение на платформе</p>
-                  <p className={classes.main__text__under__photo}>
-                     Ваш магазин (точка) будет отображаться на странице доступных магазинов нашего сервиса. По мере совершения покупок, Ваши клиенты будут получать возможность оценивать работу копании. Исходя из полученных данных, будет формироваться рейтинг и рекомендации Вас покупателям
-                  </p>
-               </div>*/}
+
 
       </div>
 

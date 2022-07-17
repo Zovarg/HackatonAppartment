@@ -1,7 +1,7 @@
 import React from 'react';
-import cl from './MyModal.module.css';
+import cl from './ModalStats.module.css';
 
-const MyModal = ({children, visible, setVisible}) => {
+const ModalStats = ({children, visible, setVisible}) => {
 
     const rootClasses = [cl.myModal]
 
@@ -13,10 +13,9 @@ const MyModal = ({children, visible, setVisible}) => {
         <div className={rootClasses.join(' ')} onClick={() => setVisible(false)}>
             <div className={cl.myModalContent} onClick={(e) => e.stopPropagation()}>
                 {children}
-                <button className={cl.buttonClose} onClick={()=>setVisible(false)}>Закрыть</button>
             </div>
         </div>
     );
 };
 
-export default MyModal;
+export default ModalStats;

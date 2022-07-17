@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import {useNavigate} from "react-router-dom";
-import imag from "./1.jpg";
+import imag from "./1.png";
 import {Carousel} from "react-bootstrap";
 import MyModal from "./UI/MyModal/MyModal";
 import FormForBuy from "./FormForBuy";
+import ModalSuccess from "./UI/ModalSuccess/ModalSuccess";
 const RecomendationsItem = (props) => {
     const [modal, setModal] = useState(false);
+    const [success, setSuccess] = useState(false);
     const router = useNavigate();
     const [index, setIndex] = useState(0);
 
@@ -16,12 +18,17 @@ const RecomendationsItem = (props) => {
     let cost_meter=parseInt(props.post.cost_per_square_meter).toLocaleString('ru-RU')
     return (
         <div className="products">
-            <MyModal visible={modal} setVisible={setModal}>
+            <MyModal visible={modal} setVisible={setModal} >
                 <FormForBuy
+                success={success}
+                setSuccess={setSuccess}
                 setModal={setModal}
                 post={props.post}
                 />
             </MyModal>
+            <ModalSuccess success={success} setSuccess={setSuccess}>
+                Заявка успешно принята!
+            </ModalSuccess>
             <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
                 <Carousel.Item >
                     <div className="products_image">

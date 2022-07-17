@@ -16,6 +16,7 @@ const FormForBuy = (props) => {
         data.residential_complex=idJK.id;
         const { data: loginData } = await api.auth.formBuy(data);
         props.setModal(false)
+        props.setSuccess(true)
     })
     const nav = useNavigate();
     const addContact = (e) => {
@@ -32,7 +33,7 @@ const FormForBuy = (props) => {
                     <div className={cl.textFrom}>Квартира:</div>
                     <MyInput
                         readOnly
-                        value={info.residential_complex+` - `+info.apartment_number}
+                        value={info.residential_complex+` — `+info.apartment_number}
                         type="text"
                         placeholder="Квартира"
                     />

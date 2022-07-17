@@ -1,25 +1,41 @@
 import React, {useState} from 'react';
 import {Carousel} from "react-bootstrap";
-import imag from './1.jpg'
+import imag from './1.png'
 import {useNavigate} from "react-router-dom";
-import MyModal from "./UI/MyModal/MyModal";
 import Indications from "./Indications/Indications";
+import {useFetching} from "../hooks/useFetching";
+import api from "../services/api";
+import ModalStats from "./UI/ModalStats/ModalStats";
 const PostItem = (props) => {
+    const [dat, setDat] = useState([]);
+    const [fetchPosts, isPostsLoading, postError] = useFetching(async (inf) => {
+        const { data: loginData} = await api.auth.getIndications({'address':`${inf.post.address}`,'number':`${inf.post.number}`});
+        setDat([...dat, ...loginData])
+
+
+    })
     const [modal, setModal] = useState(false);
     const [index, setIndex] = useState(0);
     const router = useNavigate();
     const handleSelect = (selectedIndex, e) => {
         setIndex(selectedIndex);
     };
+
+
+    const open = (e) => {
+        e.preventDefault()
+        setModal(true)
+        fetchPosts(props)
+    }
     return (
 
         <div className="products">
-            <MyModal visible={modal} setVisible={setModal}>
+            <ModalStats visible={modal} setVisible={setModal}>
                 <Indications
                     setModal={setModal}
-                    post={props.post}
+                    post={dat}
                 />
-            </MyModal>
+            </ModalStats>
             <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
                 <Carousel.Item >
                     <div className="products_image">
@@ -65,7 +81,7 @@ const PostItem = (props) => {
                 <div className="status_flat"><span>Статус: {props.post.status}</span></div>
                 <div>
                     <button className="jk_info_but" onClick={()=>router(`/recomendation/${props.post.residential_complex}`)}>ЖК {props.post.residential_complex}</button>
-                    <button className="jk_info_but" onClick={() => setModal(true)}>Показания</button>
+                    <button className="jk_info_but" onClick={open}>Показания</button>
                 </div>
             </div>
         </div>

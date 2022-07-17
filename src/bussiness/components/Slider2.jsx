@@ -5,9 +5,9 @@ import tradingNow from '../images/tradingNow.png'
 import {useNavigate} from "react-router-dom";
 import {Carousel} from "react-bootstrap";
 import classes from "./Slider.module.css";
-import slid1 from "../images/slid1.png";
-import slid2 from "../images/slid2.png";
-import slid3 from "../images/slid3.png";
+import slid1 from "../images/slid1.jpg";
+import slid2 from "../images/slid2.jpg";
+import slid3 from "../images/slid3.jpg";
 
 const Slider2 = () => {
    const [isActive, setIsActive] = useState(false)
@@ -46,7 +46,7 @@ const Slider2 = () => {
                <div className={cl.circle1}></div>
             </div>
 
-            <div className={cl.Email}>
+            <div className={cl.contact__number}>
                <div className={cl.Email__input__text}>Email</div>
                <div className>
                   <input
@@ -70,9 +70,9 @@ const Slider2 = () => {
             <div className={cl.password}>
                <form action="" className={cl.KPP_INN_form}>
 
-                  <input type="text" value='ИНН' className={cl.INN__input} />
+                  <input type="text" value='' className={cl.INN__input} />
 
-                  <input type="text" value="КПП" className={cl.KPP_input} />
+                  <input type="text" value="" className={cl.KPP_input} />
 
                </form>
             </div>

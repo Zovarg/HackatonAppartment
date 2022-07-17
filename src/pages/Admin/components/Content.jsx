@@ -103,14 +103,15 @@ export function Content() {
                         <Segmentation />
                     </div>
                 </div>
-                <div className="w-full p-2 lg:w-1/3">
-                    <div className="rounded-lg bg-card h-80">
-                        <Satisfication />
-                    </div>
-                </div>
+
                 <div className="w-full p-2 lg:w-1/3">
                     <div className="rounded-lg bg-card overflow-hidden h-80">
                         <AddComponent />
+                    </div>
+                </div>
+                <div className="w-full p-2 lg:w-1/3">
+                    <div className="rounded-lg bg-card h-80">
+                        <Satisfication />
                     </div>
                 </div>
             </div>

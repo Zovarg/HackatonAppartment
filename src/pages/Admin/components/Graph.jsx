@@ -31,7 +31,7 @@ export function Graph() {
                 <Icon path="res-react-dash-options" className="w-2 h-2" />
             </div>
             <div className="tooltip-body text-center p-3">
-                <div className="text-white font-bold">₽1300.50</div>
+                <div className="text-white font-bold">1300.50 Вт</div>
                 <div className="">Доход от 230 продаж</div>
             </div>
         </div>
@@ -40,7 +40,7 @@ export function Graph() {
         <div className="flex p-4 h-full flex-col">
             <div className="">
                 <div className="flex items-center">
-                    <div className="font-bold text-white">Резюме вашей работы</div>
+                    <div className="font-bold text-white">Потребление электроэнергии</div>
                     <div className="flex-grow" />
 
                     <Icon path="res-react-dash-graph-range" className="w-4 h-4" />

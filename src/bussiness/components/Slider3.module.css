@@ -1,7 +1,7 @@
 body {
    margin: 0;
    padding: 0;
-   box-sizing: border-box;
+   box-sizing: unset;
 }
 
 @font-face {
@@ -14,17 +14,18 @@ body {
    width: 1266px;
    display: flex;
    margin-bottom: 100px;
+
 }
 
 .left__block {
    width: 584px;
-   padding-left: 65px;
-   padding-right: 65px;
+   max-width: 600px;
    height: inherit;
    border: 1px solid black;
    padding-left: 86px;
    padding-top: 40px;
    padding-right: 61px;
+   box-sizing: unset;
 }
 
 .logo__image {

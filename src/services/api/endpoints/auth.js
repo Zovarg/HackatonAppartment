@@ -14,7 +14,11 @@ const endpoints = {
     }
   }),
   getIdJK:(id) => axios.get(`/residentialComplexes/${id}/`),
-  getIndications:(address,number) => axios.get(`/user/apartments/meters/get/${address}/${number}`),
+  getIndications:(data) => axios.post(`/user/apartments/meters/get/`,data, {
+    headers: {
+      'Content-Type': `application/json`
+    }
+  }),
   formBuy:(data) => axios.post("/user/apartments/requestForm", data),
   getResidential:() => axios.get("/residentialComplexes"),
   getPartners:(id) => axios.get(`/residentialComplexes/${id}/partners/`),

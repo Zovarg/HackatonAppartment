@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import cl from './Slider2.module.css'
 import Vivaldi from '../images/Vivaldi.png'
 import tradingNow from '../images/tradingNow.png'
+import {useNavigate} from "react-router-dom";
+import {Carousel} from "react-bootstrap";
+import classes from "./Slider.module.css";
+import slid1 from "../images/slid1.png";
+import slid2 from "../images/slid2.png";
+import slid3 from "../images/slid3.png";
 
 const Slider2 = () => {
    const [isActive, setIsActive] = useState(false)
@@ -11,6 +17,16 @@ const Slider2 = () => {
       setIsActive(true)
 
    }
+   const nav = useNavigate();
+   function next(e){
+      e.preventDefault();
+      nav("/bussines3");
+   };
+   const [index, setIndex] = useState(0);
+
+   const handleSelect = (selectedIndex, e) => {
+      setIndex(selectedIndex);
+   };
 
    return (
       <div className={cl.container}>
@@ -76,25 +92,35 @@ const Slider2 = () => {
                   type="text"
                />
             </div>
-            <button className={cl.button__register}>Региcтрация</button>
+            <button className={cl.button__register} onClick={next}>Региcтрация</button>
             <div className={cl.user__agreement}>Региcтрируяcь вы cоглашаетеcь c нашими
                <div><a href="#">Уcловиями пользования </a>и <a href="#">Политикой конфиденциальноcти</a></div></div>
          </div>
 
-         <div className={cl.right__block}>
-            <div className={cl.right__container}>
-               <div className={cl.image}>
-                  <img src={tradingNow} className={cl.trading__image} alt="trading" />
-               </div>
-               <div className={cl.text__content}>
-                  <p className={cl.text__under__photo}>Размещение на платформе</p>
-                  <p className={cl.main__text__under__photo}>
-                     Ваш магазин (точка) будет отображаться на странице доступных магазинов нашего сервиса. По мере совершения покупок, Ваши клиенты будут получать возможность оценивать работу копании. Исходя из полученных данных, будет формироваться рейтинг и рекомендации Вас покупателям
-                  </p>
-               </div>
-            </div>
+         <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
+            <Carousel.Item >
+               <img
+                   className={classes.right__block}
+                   src={slid1}
+                   alt="First slide"
+               />
+            </Carousel.Item>
+            <Carousel.Item >
+               <img
+                   className={classes.right__block}
+                   src={slid2}
+                   alt="Second slide"
+               />
+            </Carousel.Item>
+            <Carousel.Item>
 
-         </div>
+               <img
+                   className={classes.right__block}
+                   src={slid3}
+                   alt="Third slide"
+               />
+            </Carousel.Item>
+         </Carousel>
 
       </div >
    )

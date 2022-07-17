@@ -5,6 +5,8 @@ import RecomendationList from "../../component/RecomendationList";
 import Navbar from "../../component/UI/Navbar/Navbar";
 import api from "../../services/api";
 import MySelect from "../../component/UI/select/MySelect";
+import {useNavigate} from "react-router-dom";
+import {Container} from "react-bootstrap";
 
 
 function Recomendations() {
@@ -14,7 +16,7 @@ function Recomendations() {
         const { data: loginData } = await api.auth.getRecomendation();
         setPosts([...posts, ...loginData.results])
     })
-
+    const router = useNavigate();
     useEffect(() => {
         fetchPosts(selected)
     }, [selected])
@@ -29,6 +31,8 @@ function Recomendations() {
         <div>
 
             <Navbar/>
+            <Container>
+            <div className="button_recommend">
             <MySelect
                 value={selected}
                 onChange={sortRecomends}
@@ -44,7 +48,10 @@ function Recomendations() {
                     {value:'Летний', name:'Летний '},
                 ]}
             />
-        <div className="App">
+            <button className="jk_map_but" onClick={()=>router(`/map`)}>Карта</button>
+            </div>
+            </Container>
+            <div className="App">
             {postError &&
                 <h1>Произошла ошибка ${postError}</h1>
             }

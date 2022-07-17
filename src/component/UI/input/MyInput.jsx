@@ -5,9 +5,7 @@ import {Container, InputGroup} from 'react-bootstrap'
 const MyInput = (props) => {
     return (
         <InputGroup className="form mb-3">
-            <Container className="box">
                 <input  className={classes.myInput} {...props}/>
-            </Container>
         </InputGroup>
 
 

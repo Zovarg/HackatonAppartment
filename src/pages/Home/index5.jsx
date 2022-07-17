@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import cl from './home.module.css'
-import slider5 from './images/slider5.png'
+import slider5 from './images/slider5.webp'
 import courusel5 from './images/courusel5.png'
 import {useNavigate} from "react-router-dom";
 function Home5() {

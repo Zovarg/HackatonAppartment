@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import Vivaldi from '../images/Vivaldi.png'
 import tradingNow from '../images/tradingNow.png'
 import classes from './Slider.module.css'
-
+import {useNavigate} from "react-router-dom";
+import {Carousel} from "react-bootstrap";
+import imag from "../../component/1.jpg";
+import slid1 from "../images/slid1.png";
+import slid2 from "../images/slid2.png";
+import slid3 from "../images/slid3.png";
 const Slider = () => {
 
    const [pointsAmount, setPointsAmount] = useState('')
@@ -16,7 +21,17 @@ const Slider = () => {
       setIsActive(true)
 
    }
+   const nav = useNavigate();
+   function next(e){
+      e.preventDefault();
+      nav("/bussines2");
+   };
 
+   const [index, setIndex] = useState(0);
+
+   const handleSelect = (selectedIndex, e) => {
+      setIndex(selectedIndex);
+   };
    return (
       <div className={classes.container}>
 
@@ -104,12 +119,35 @@ const Slider = () => {
                   onChange={event => setUrAddress(event.target.value)} //Нужна валидация для формы заполнения юридичеcкого адреcа
                />
             </div>
-            <button className={classes.button__next}>Далее</button>
+            <button className={classes.button__next} onClick={next}>Далее</button>
          </div>
 
-         <div className={classes.right__block}>
-            <div className={classes.right__container}>
-               <div className={classes.image}>
+
+               <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
+                  <Carousel.Item >
+                           <img
+                               className={classes.right__block}
+                               src={slid1}
+                               alt="First slide"
+                           />
+                  </Carousel.Item>
+                  <Carousel.Item >
+                           <img
+                               className={classes.right__block}
+                               src={slid2}
+                               alt="Second slide"
+                           />
+                  </Carousel.Item>
+                  <Carousel.Item>
+
+                           <img
+                               className={classes.right__block}
+                               src={slid3}
+                               alt="Third slide"
+                           />
+                  </Carousel.Item>
+               </Carousel>
+               {/*<div className={classes.image}>
                   <img src={tradingNow} alt="trading" className={classes.trading__image} />
                </div>
                <div className={classes.text__content}>
@@ -117,10 +155,8 @@ const Slider = () => {
                   <p className={classes.main__text__under__photo}>
                      Ваш магазин (точка) будет отображаться на странице доступных магазинов нашего сервиса. По мере совершения покупок, Ваши клиенты будут получать возможность оценивать работу копании. Исходя из полученных данных, будет формироваться рейтинг и рекомендации Вас покупателям
                   </p>
-               </div>
-            </div>
+               </div>*/}
 
-         </div>
       </div>
 
    )

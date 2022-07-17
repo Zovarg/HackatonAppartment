@@ -13,6 +13,8 @@ const endpoints = {
       limit:limit,
     }
   }),
+  getIdJK:(id) => axios.get(`/residentialComplexes/${id}/`),
+  formBuy:(data) => axios.post("/user/apartments/requestForm", data),
   getResidential:() => axios.get("/residentialComplexes"),
   getPartners:(id) => axios.get(`/residentialComplexes/${id}/partners/`),
   getDate: () => axios.get("/requests"),

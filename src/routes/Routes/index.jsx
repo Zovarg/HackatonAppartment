@@ -13,7 +13,9 @@ import {
   Container,
   Grid,
 } from "@material-ui/core";
+
 import Posts from "../../pages/Main/Posts";
+import Maper from "../../pages/Main/Maper";
 import Recomendations from "../../pages/Main/Recomendations";
 import Company from "../../pages/Main/Company";
 import Home3 from "../../pages/Home/index3";
@@ -23,7 +25,9 @@ import Home2 from "../../pages/Home/index2";
 import Home6 from "../../pages/Home/index6";
 import Admin from "../../pages/Admin/Admin";
 import AdminRoute from "../components/AdminRoute";
-import Bussines from "../../bussiness/Business";
+import Slider from "../../bussiness/components/Slider";
+import Slider2 from "../../bussiness/components/Slider2";
+import Slider3 from "../../bussiness/components/Slider3";
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(3),
@@ -38,7 +42,13 @@ function AppRoutes() {
     <Routes>
 
         <Route path="/bussines" element={
-                <Bussines/>
+                <Slider/>
+        } />
+        <Route path="/bussines2" element={
+            <Slider2/>
+        } />
+        <Route path="/bussines3" element={
+            <Slider3/>
         } />
       <Route path="/" element={
           <GuestRoute>
@@ -111,6 +121,14 @@ function AppRoutes() {
                 </PrivateRoute>
             }
 
+        />
+        <Route
+            path="/map"
+            element={
+                <PrivateRoute>
+                    <Maper/>
+                </PrivateRoute>
+            }
         />
       <Route
         path="/profile"

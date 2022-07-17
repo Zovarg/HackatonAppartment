@@ -2,7 +2,10 @@ import React, {useState} from 'react';
 import {Carousel} from "react-bootstrap";
 import imag from './1.jpg'
 import {useNavigate} from "react-router-dom";
+import MyModal from "./UI/MyModal/MyModal";
+import Indications from "./Indications/Indications";
 const PostItem = (props) => {
+    const [modal, setModal] = useState(false);
     const [index, setIndex] = useState(0);
     const router = useNavigate();
     const handleSelect = (selectedIndex, e) => {
@@ -11,8 +14,12 @@ const PostItem = (props) => {
     return (
 
         <div className="products">
-
-
+            <MyModal visible={modal} setVisible={setModal}>
+                <Indications
+                    setModal={setModal}
+                    post={props.post}
+                />
+            </MyModal>
             <Carousel activeIndex={index} onSelect={handleSelect} interval={null}>
                 <Carousel.Item >
                     <div className="products_image">
@@ -56,7 +63,10 @@ const PostItem = (props) => {
                 <div className="address"><span>{props.post.address}</span></div>
                 <div className="cost_flat"><h3>Тип апартаментов: {props.post.apartment_type}</h3></div>
                 <div className="status_flat"><span>Статус: {props.post.status}</span></div>
-                <div><button className="jk_info_but" onClick={()=>router(`/recomendation/${props.post.residential_complex}`)}>ЖК {props.post.residential_complex}</button></div>
+                <div>
+                    <button className="jk_info_but" onClick={()=>router(`/recomendation/${props.post.residential_complex}`)}>ЖК {props.post.residential_complex}</button>
+                    <button className="jk_info_but" onClick={() => setModal(true)}>Показания</button>
+                </div>
             </div>
         </div>
     );

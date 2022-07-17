@@ -1,0 +1,46 @@
+.decor {
+    position: relative;
+    max-width: 100%;
+    background: white;
+    border-radius: 30px;
+    text-align: start;
+}
+.textFrom{
+    font-size: 20px;
+}
+.jk_form_but{
+    text-decoration: none;
+    margin-top: 20px;
+    padding: 12px 50px;
+    border: 0;
+    border-radius: 30px;
+    background-image: linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+    transition: .5s;
+}
+.form_inner {
+    padding: 50px;
+}
+.form_inner input {
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    background: #E9EFF6;
+    line-height: 60px;
+    border-width: 0;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.form_inner input[type="submit"] {
+    margin-top: 30px;
+    background: #f69a73;
+    border-bottom: 4px solid #d87d56;
+    color: white;
+    font-size: 14px;
+}

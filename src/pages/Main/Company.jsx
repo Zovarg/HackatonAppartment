@@ -12,7 +12,6 @@ import {useParams} from "react-router-dom";
         const params=useParams() //Получаем текущий айдишник для запроса
         const [fetchPosts, isPostsLoading, postError] = useFetching(async (id) => {
             const { data: loginData } = await api.auth.getResidential();
-            console.log(loginData)
             const jk=loginData.filter(post=>post.name.toLowerCase().includes(id.toLowerCase()))
             setPosts([...posts, ...jk])
         })

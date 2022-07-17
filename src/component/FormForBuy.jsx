@@ -22,7 +22,7 @@ const FormForBuy = (props) => {
         e.preventDefault()
         fetchPosts(info)
         setInfo({...info,phone: '', contacts: 'Позвонить',datetime_to_feedback:''})
-        nav("/recomendation");
+
     }
 
     return (

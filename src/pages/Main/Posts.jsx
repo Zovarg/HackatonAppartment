@@ -10,7 +10,6 @@ function Posts() {
     const [posts, setPosts] = useState([]);
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
         const { data: loginData } = await api.auth.getAppartments();
-        console.log(loginData)
         setPosts([...posts, ...loginData.apartments])
     })
 

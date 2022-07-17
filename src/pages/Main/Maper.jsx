@@ -14,7 +14,6 @@ const Maper = () => {
     const [posts, setPosts] = useState([]);
     const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
         const { data: loginData } = await api.auth.getResidential();
-        console.log(loginData)
         setPosts([...posts, ...loginData])
     })
 
@@ -22,14 +21,6 @@ const Maper = () => {
         fetchPosts()
     }, [])
     let residentialComplexes = posts
-    /*let residentialComplexes = [
-        {
-            cords: {
-                lat: 45.03605,
-                lon: 38.98
-            }
-        }
-    ]*/
 
     return (
         <div className={cl.map_background}>

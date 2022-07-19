@@ -11,6 +11,7 @@
 ![Иллюстрация к проекту](https://github.com/Zovarg/HackatonAppartment/blob/master/SreenShots/2.jpg)
 ![Иллюстрация к проекту](https://github.com/Zovarg/HackatonAppartment/blob/master/SreenShots/3.jpg)
 ![Иллюстрация к проекту](https://github.com/Zovarg/HackatonAppartment/blob/master/SreenShots/4.jpg)
+![Иллюстрация к проекту](https://github.com/Zovarg/HackatonAppartment/blob/master/SreenShots/5.jpg)
 # Планы по доработке #
 * Произвести декомпозицию  некоторых элементов
 * Вынести повторяющиеся элементы в отдельные компоненты

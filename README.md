@@ -6,9 +6,11 @@
 * Адаптивная верстка под разрешения 320, 520, 768, 1024, 1280 и выше, которая также корректно отображается между указанными брейкпоинтами
 * React
 * axios
-
-
-
+# Скриншоты #
+![Иллюстрация к проекту](https://github.com/Zovarg/HackatonAppartment/blob/master/SreenShots/1.jpg)
+![Иллюстрация к проекту](https://github.com/Zovarg/HackatonAppartment/blob/master/SreenShots/2.jpg)
+![Иллюстрация к проекту](https://github.com/Zovarg/HackatonAppartment/blob/master/SreenShots/3.jpg)
+![Иллюстрация к проекту](https://github.com/Zovarg/HackatonAppartment/blob/master/SreenShots/4.jpg)
 # Планы по доработке #
 * Произвести декомпозицию  некоторых элементов
 * Вынести повторяющиеся элементы в отдельные компоненты
